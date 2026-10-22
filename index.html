@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Diabetes Prediction | AI Applications Lab</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ANIMATED LIQUID BACKGROUND & CURSOR RING FIELD
+    ====================================================== -->
+
+    <div class="background" aria-hidden="true">
+        <div class="smoke smoke-1"></div>
+        <div class="smoke smoke-2"></div>
+        <div class="smoke smoke-3"></div>
+        <div class="smoke smoke-4"></div>
+        <canvas id="cursorRingCanvas" class="cursor-ring-canvas"></canvas>
+    </div>
+
+
+    <!-- =====================================================
+         NAVBAR
+    ====================================================== -->
+
+    <header class="nav-wrap">
+
+        <nav class="navbar glass">
+
+            <a href="index.html" class="brand">
+
+                <!-- CU LOGO -->
+                <img
+                    src="image.png"
+                    alt="Chandigarh University Logo"
+                    class="cu-logo"
+                >
+
+                <div class="brand-name">
+                    <strong>CHANDIGARH</strong>
+                    <small>UNIVERSITY</small>
+                </div>
+
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="index.html" class="active">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="how-it-works.html">
+                    How It Works
+                </a>
+
+                <a href="disclaimer.html">
+                    Disclaimer
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN
+    ====================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HERO
+        ================================================== -->
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="hero-badge">
+                    AI APPLICATIONS LAB
+                </div>
+
+
+                <h1>
+
+                    Diabetes
+
+                    <span>
+                        Prediction
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-copy">
+
+                    A clean machine learning based web application
+                    created as a Project Based Learning assignment
+                    for AI Applications at Chandigarh University.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <button
+                        class="primary-button"
+                        onclick="scrollToPrediction()"
+                    >
+
+                        <span>
+                            Try Prediction
+                        </span>
+
+                        <span class="arrow">
+                            ↗
+                        </span>
+
+                    </button>
+
+
+                    <a
+                        href="about.html"
+                        class="text-button"
+                    >
+
+                        Explore the project
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PREDICTION SECTION
+        ================================================== -->
+
+        <section
+            id="prediction"
+            class="prediction-section"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    PREDICTION
+                </p>
+
+
+                <h2>
+
+                    Enter the required
+
+                    <span>
+                        values.
+                    </span>
+
+                </h2>
+
+
+                <p>
+                    Provide the eight input values used by
+                    the prediction model.
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FORM CARD
+            ================================================== -->
+
+            <div class="prediction-card glass">
+
+                <form
+                    id="predictionForm"
+                    novalidate
+                >
+
+
+                    <!-- Pregnancies -->
+
+                    <div class="field">
+
+                        <label for="Pregnancies">
+                            Pregnancies
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Pregnancies"
+                            min="0"
+                            step="1"
+                            placeholder="e.g. 2"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Glucose -->
+
+                    <div class="field">
+
+                        <label for="Glucose">
+                            Glucose
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Glucose"
+                            min="0"
+                            step="0.1"
+                            placeholder="e.g. 120"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Blood Pressure -->
+
+                    <div class="field">
+
+                        <label for="BloodPressure">
+                            Blood Pressure
+                        </label>
+
+                        <input
+                            type="number"
+                            id="BloodPressure"
+                            min="0"
+                            step="0.1"
+                            placeholder="e.g. 70"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Skin Thickness -->
+
+                    <div class="field">
+
+                        <label for="SkinThickness">
+                            Skin Thickness
+                        </label>
+
+                        <input
+                            type="number"
+                            id="SkinThickness"
+                            min="0"
+                            step="0.1"
+                            placeholder="e.g. 25"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Insulin -->
+
+                    <div class="field">
+
+                        <label for="Insulin">
+                            Insulin
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Insulin"
+                            min="0"
+                            step="0.1"
+                            placeholder="e.g. 100"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- BMI -->
+
+                    <div class="field">
+
+                        <label for="BMI">
+                            BMI
+                        </label>
+
+                        <input
+                            type="number"
+                            id="BMI"
+                            min="0"
+                            step="0.1"
+                            placeholder="e.g. 28.5"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Diabetes Pedigree -->
+
+                    <div class="field">
+
+                        <label for="DiabetesPedigreeFunction">
+                            Diabetes Pedigree Function
+                        </label>
+
+                        <input
+                            type="number"
+                            id="DiabetesPedigreeFunction"
+                            min="0"
+                            step="0.001"
+                            placeholder="e.g. 0.35"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Age -->
+
+                    <div class="field">
+
+                        <label for="Age">
+                            Age
+                        </label>
+
+                        <input
+                            type="number"
+                            id="Age"
+                            min="1"
+                            step="1"
+                            placeholder="e.g. 25"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- Buttons -->
+
+                    <div class="form-actions">
+
+                        <button
+                            type="submit"
+                            id="predictBtn"
+                            class="submit-button"
+                        >
+
+                            <span id="buttonText">
+                                Generate Prediction
+                            </span>
+
+                            <span
+                                id="loader"
+                                class="loader hidden"
+                            ></span>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            id="resetBtn"
+                            class="reset-button"
+                        >
+                            <span>Reset</span>
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+
+                <!-- =================================================
+                     RESULT
+                ================================================== -->
+
+                <div
+                    id="resultBox"
+                    class="result-box"
+                >
+
+                    <div class="result-main">
+
+                        <div>
+
+                            <p class="result-label">
+                                RESULT
+                            </p>
+
+                            <h3 id="resultTitle">
+                                —
+                            </h3>
+
+                        </div>
+
+
+                        <div
+                            id="resultIcon"
+                            class="result-icon"
+                        >
+                            —
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="probability">
+
+                        <div class="probability-head">
+
+                            <span>
+                                Prediction probability
+                            </span>
+
+                            <strong id="probabilityText">
+                                0%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="progress">
+
+                            <div
+                                id="progressBar"
+                                class="progress-fill"
+                            ></div>
+
+                        </div>
+
+                    </div>
+
+
+                    <p
+                        id="resultMessage"
+                        class="result-message"
+                    ></p>
+
+                </div>
+
+
+
+                <!-- Error -->
+
+                <div
+                    id="errorBox"
+                    class="error-box"
+                ></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
