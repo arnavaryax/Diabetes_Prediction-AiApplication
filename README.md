@@ -1,2 +1,0 @@
-# AI-Application
-AI APPLICATION SEM 1 PROJECT
